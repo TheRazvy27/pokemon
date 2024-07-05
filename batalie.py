@@ -12,10 +12,10 @@ class batalie:
             if not pokemon2.este_viu():
                 print (pokemon2.nume, " A murit!")
                 for i in range(len(antrenor2.pokemoni)):
-                    if not antrenor2.pokemoni[i].este_viu():
-                        antrenor2.pokemoni.pop(i)
+                    if not antrenor2.pokemoni[i - 1].este_viu():
+                        antrenor2.pokemoni.pop(i - 1)
                 if not antrenor2.are_pokemoni_vii():
-                    print("antrenor 2 nu mai are pokemoni")
+                    print(antrenor2.nume, " Nu mai are pokemoni! Game over!")
                     break
                 pokemon2 = antrenor2.alege_pokemon()                   
             pokemon2.ataca(pokemon1)
@@ -24,10 +24,10 @@ class batalie:
             if not pokemon1.este_viu():
                 print (pokemon1.nume, " A murit!")
                 for i in range(len(antrenor1.pokemoni)):
-                    if not antrenor1.pokemoni[i].este_viu():
-                        antrenor1.pokemoni.pop(i)
+                    if not antrenor1.pokemoni[i - 1].este_viu():
+                        antrenor1.pokemoni.pop(i - 1)
                 if not antrenor1.are_pokemoni_vii():
-                    print("antrenor 1 nu mai are pokemoni")
+                    print(antrenor1.nume, " Nu mai are pokemoni! Game over!")
                     break
                 pokemon1 = antrenor1.alege_pokemon()   
                      
