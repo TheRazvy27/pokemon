@@ -4,7 +4,11 @@ class antrenor:
         self.pokemoni = pokemoni
 
     def alege_pokemon(self):
-        return self.pokemoni[0]
+        print(self.nume," Alegeti pokemonul dorit:\n")
+        for i in range (len(self.pokemoni)):
+            print(f'{i+1}. {self.pokemoni[i].nume}\n')
+        choice = input("Alegere: ")
+        return self.pokemoni[int(choice) - 1]
 
     def are_pokemoni_vii(self):    
         if self.pokemoni:
