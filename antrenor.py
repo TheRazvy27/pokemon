@@ -4,7 +4,6 @@ class antrenor:
         self.pokemoni = pokemoni
 
     def alege_pokemon(self):
-        print (self.pokemoni[0])
         return self.pokemoni[0]
 
     def are_pokemoni_vii(self):    

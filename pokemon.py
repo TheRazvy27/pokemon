@@ -1,16 +1,26 @@
 class pokemon:
     def __init__(self, nume, tip, viata, putere_atac):
-        print("initializare")
+        #print("initializare")
         self.nume = nume
         self.tip = tip
         self.viata = viata
         self.putere_atac = putere_atac
 
-    def ataca():
-        pass    
+    def ataca(self, inamic):
+        if (self.tip == "Apa" and inamic.tip == "Foc"):
+            inamic.viata -= 2 * self.putere_atac
+            return inamic.viata
+        if (self.tip == "Foc" and inamic.tip == "Pamant"):
+            inamic.viata -= 2 * self.putere_atac       
+            return inamic.viata     
+        if (self.tip == "Pamant" and inamic.tip == "Apa"):
+            inamic.viata -= 2 * self.putere_atac
+            return inamic.viata
+        inamic.viata -= self.putere_atac
+        return inamic.viata
 
     def este_viu(self):
-        if (self.viata == 0):
+        if (self.viata <= 0):
             return False
         else:
             return True
